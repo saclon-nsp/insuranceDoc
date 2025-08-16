@@ -2,6 +2,7 @@ import { Component, OnInit} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DEFAULT_ABSL_VIEW_DATA, AbslViewFormData } from '../../model/form-modal';
 import { Modalform } from '../modalform/modalform';
+import { Router } from '@angular/router';
 
 // PDF deps via ESM (install: npm i jspdf html2canvas)
 import jsPDF from 'jspdf';
@@ -20,6 +21,7 @@ export class Insurance {
 
   // modal flags
   showModal = false;
+  constructor(private router: Router) {}
 
   ngOnInit(): void {
     this.refreshDates();
@@ -87,5 +89,14 @@ export class Insurance {
     }
 
     pdf.save(`${this.abslViewFormData.insuredPerson}-Insurance.pdf`);
+  }
+
+  public logout() {
+  // Clear local/session storage
+    localStorage.clear();
+    sessionStorage.clear();
+
+    // If you use Angular Router for login navigation
+    this.router.navigate(['/login']);
   }
 }

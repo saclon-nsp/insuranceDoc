@@ -21,7 +21,7 @@ export const DEFAULT_ABSL_VIEW_DATA: AbslViewFormData = {
   city: '',
   pincode: '',
   state: '',
-  country: '',
+  country: 'India',
   dob: '',
   gender: '',
   nominee: '',

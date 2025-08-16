@@ -226,3 +226,17 @@
 .btn-success:hover {
   background-color: #1e7e34;
 }
+
+
+button.danger {
+  background: #d9534f;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button.danger:hover {
+  background: #c9302c;
+}

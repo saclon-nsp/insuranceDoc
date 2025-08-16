@@ -1,6 +1,6 @@
 
 export default {
-  basePath: 'https://saclon-nsp.github.io/insuranceDoc',
+  basePath: '/insuranceDoc',
   supportedLocales: {
   "en-US": ""
 },

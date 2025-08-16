@@ -1,0 +1,117 @@
+<div class="absl-container">
+  <h2>Insurance Form</h2>
+
+  <form [formGroup]="abslForm" (ngSubmit)="submitForm()">
+
+    <!-- Full width row -->
+    <div class="form-row">
+      <div class="form-group full-width">
+        <label>Name of Insured Person:</label>
+        <input type="text" formControlName="insuredPerson" placeholder="Enter insured person's name" />
+        <div class="error" *ngIf="abslForm.get('insuredPerson')?.invalid && abslForm.get('insuredPerson')?.touched">
+          Name is required.
+        </div>
+      </div>
+    </div>
+
+    <fieldset>
+      <legend>Address</legend>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label>Address Line 1:</label>
+          <input type="text" formControlName="addressLine1" />
+          <div class="error" *ngIf="abslForm.get('addressLine1')?.invalid && abslForm.get('addressLine1')?.touched">
+            Address Line 1 is required.
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Address Line 2:</label>
+          <input type="text" formControlName="addressLine2" />
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label>Address Line 3:</label>
+          <input type="text" formControlName="addressLine3" />
+        </div>
+        <div class="form-group">
+          <label>City:</label>
+          <input type="text" formControlName="city" />
+          <div class="error" *ngIf="abslForm.get('city')?.invalid && abslForm.get('city')?.touched">
+            City is required.
+          </div>
+        </div>
+      </div>
+
+      <div class="form-row three-col">
+        <div class="form-group">
+          <label>Pincode:</label>
+          <input type="text" formControlName="pincode" />
+          <div class="error" *ngIf="abslForm.get('pincode')?.invalid && abslForm.get('pincode')?.touched">
+            Enter a valid 6-digit pincode.
+          </div>
+        </div>
+        <div class="form-group">
+          <label>State:</label>
+          <input type="text" formControlName="state" />
+          <div class="error" *ngIf="abslForm.get('state')?.invalid && abslForm.get('state')?.touched">
+            State is required.
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Country:</label>
+          <input type="text" formControlName="country" />
+          <div class="error" *ngIf="abslForm.get('country')?.invalid && abslForm.get('country')?.touched">
+            Country is required.
+          </div>
+        </div>
+      </div>
+    </fieldset>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label>Date of Birth:</label>
+        <input type="date" formControlName="dob" />
+        <div class="error" *ngIf="abslForm.get('dob')?.invalid && abslForm.get('dob')?.touched">
+          Date of Birth is required.
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Gender:</label>
+        <select formControlName="gender">
+          <option value="">Select</option>
+          <option>Male</option>
+          <option>Female</option>
+          <option>Other</option>
+        </select>
+        <div class="error" *ngIf="abslForm.get('gender')?.invalid && abslForm.get('gender')?.touched">
+          Gender is required.
+        </div>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label>Nominee:</label>
+        <input type="text" formControlName="nominee" />
+        <div class="error" *ngIf="abslForm.get('nominee')?.invalid && abslForm.get('nominee')?.touched">
+          Nominee is required.
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Relationship:</label>
+        <input type="text" formControlName="relationship" />
+        <div class="error" *ngIf="abslForm.get('relationship')?.invalid && abslForm.get('relationship')?.touched">
+          Relationship is required.
+        </div>
+      </div>
+    </div>
+
+    <div class="form-actions">
+      <!-- <button type="button" class="secondary" (click)="onCancel()">Cancel</button> -->
+      <button type="submit" [disabled]="abslForm.invalid">Save</button>
+    </div>
+  </form>
+</div>

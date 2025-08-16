@@ -1,0 +1,8 @@
+.login-wrap { min-height: 100vh; display: grid; place-items: center; background: #f6f7f9; padding: 20px; }
+.card { width: 360px; background: #fff; border: 1px solid #eee; border-radius: 12px; padding: 24px; box-shadow: 0 6px 18px rgba(0,0,0,.06); }
+h2 { margin: 0 0 16px; text-align: center; }
+label { display:block; font-weight:600; margin-top:12px; }
+input { width:95%; padding:10px; border:1px solid #ccc; border-radius:8px; margin-top:6px; }
+button { margin-top:18px; width:100%; padding:12px; background:#28a745; color:#fff; border:0; border-radius:8px; font-weight:700; cursor:pointer; }
+button:disabled { background:#bdbdbd; cursor:not-allowed; }
+.error { color:#c62828; font-size:12px; margin-top:6px; }

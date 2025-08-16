@@ -1,0 +1,362 @@
+<div class="actions">
+  <button class="outline" (click)="openModal()">Add Detail</button>
+  <button class="solid" (click)="downloadPDF()">Download PDF</button>
+</div>
+
+<div class="page a4 portrait">
+
+  <!-- Header -->
+  <header class="header">
+    <img src="assets/images/absl_header_image.PNG" alt="Aditya Birla Logo" class="logo"  width="100%"
+     height="80">
+  </header>
+
+  <!-- Certificate Title -->
+  <h2 class="title">Group Activ Secure - Certificate of Insurance</h2>
+
+  <!-- Policy Information -->
+  <table class="info-table">
+    <tr>
+      <td width="25%">Policy Issuing Office</td>
+      <td width="25%">Aditya Birla Health Insurance Company Limited, 7th Floor, MBC Infotech Park, Ghodbunder Road, Thane (W), Maharashtra 400615</td>
+      <td width="25%">Policy Servicing Office</td>
+      <td width="25%">Aditya Birla Health Insurance Company Limited, 7th Floor, MBC Infotech Park, Ghodbunder Road, Thane (W), Maharashtra 400615</td>
+    </tr>
+    <tr>
+      <td>Master Policy Number</td>
+      <td>62-21-00150-23-27</td>
+      <td>Certificate Number</td>
+      <td>GPA-AIRPAY-002433</td>
+    </tr>
+    <tr>
+      <td>Product Name</td>
+      <td>Group Activ Secure</td>
+      <td>Member Id</td>
+      <td>GPA-AIRPAY-002433</td>
+    </tr>
+    <tr>
+      <td>Plan Name</td>
+      <td colspan="3">Group Personal Accident</td>
+    </tr>
+
+    <tr>
+      <td>Name of Insured Person<br> Residential Address of Insured Person</td>
+      <td style="word-break: break-word;overflow-wrap: anywhere;">{{abslViewFormData?.insuredPerson | uppercase}} <br> 
+        @if (abslViewFormData?.addressLine1) {
+          <span>{{ abslViewFormData.addressLine1 | uppercase}},</span>
+        }
+        @if (abslViewFormData?.addressLine2 && abslViewFormData?.addressLine2 !== "") {
+          <span>{{ abslViewFormData.addressLine2 | uppercase}},</span>
+        } 
+        @if (abslViewFormData?.addressLine3 && abslViewFormData?.addressLine3 !== "") {
+          <span>{{ abslViewFormData.addressLine3 | uppercase}},</span>
+        }
+        @if (abslViewFormData?.city) {
+          <span>{{ abslViewFormData.city | uppercase}},</span>
+        }
+        @if (abslViewFormData?.pincode) {
+          <span>{{ abslViewFormData.pincode }},</span>
+        }
+        @if (abslViewFormData?.state) {
+          <span>{{ abslViewFormData.state | uppercase}},</span>
+        }
+        @if (abslViewFormData?.country) {
+          <span>{{ abslViewFormData.country | uppercase}},</span>
+        }
+      </td>
+      <td>Unique Identification Number</td>
+      <td>b59b0726920d85d91bf5dfa0eadf3cf9</td>
+    </tr>
+  </table>
+
+  <table class="info-table">
+    <tr>
+      <td width="50%"> Inception date Time of Master Policy</td>
+      <td width="50%">From 00:00 Hrs of {{ todayDate }}</td>
+    </tr>
+    <tr>
+      <td> Expiry Date Time of Master Policy</td>
+      <td>To Midnight 23:59 Hrs of {{ expiryDate }}</td>
+    </tr>
+     <tr>
+      <td colspan="2"> Expiry Date Time of Master Policy</td>
+    </tr>
+     <tr>
+      <td> Start Date</td>
+      <td>00:01 hrs on {{ todayDate }}</td>
+    </tr>
+    <tr>
+      <td> End Date</td>
+      <td>23:59 hrs on {{ expiryDate }}</td>
+    </tr>
+  </table>
+
+  <!-- Insured Details -->
+  <div class="section-heading">Insured Detail</div>
+  
+  <table class="info-table">
+    <tr>
+      <td width="17%"><b>Insured Person</b></td>
+      <td width="17%"><b>Date of Birth</b></td>
+      <td width="16%"><b>Gender</b></td>
+      <td width="17%"><b>Nominee</b></td>
+      <td width="17%"><b>Relationship</b></td>
+      <td width="16%"><b>Sum Insured</b></td>
+    </tr>
+    <tr>
+      <td width="17%">{{abslViewFormData?.insuredPerson | uppercase}}</td>
+      <td width="17%">{{abslViewFormData?.dob | date: 'dd-MM-yyyy'}}</td>
+      <td width="16%">{{abslViewFormData?.gender | uppercase}}</td>
+      <td width="17%">{{abslViewFormData?.nominee | uppercase}}</td>
+      <td width="17%">{{abslViewFormData?.relationship | uppercase}}</td>
+      <td width="16%">300000.00</td>
+    </tr>
+  </table>
+
+  <!-- Coverage -->
+  <div class="section-heading">Coverage Details</div>
+
+  <table class="info-table">
+    <tr>
+      <td width="50%"><b>Group Activ Secure Personal Accident</b></td>
+      <td width="50%"><b>Capital Sum Insured/ Sum Insured (Rs)</b></td>
+    </tr>
+    <tr>
+      <td colspan="2"><b>Section A: Basic Covers</b></td> 
+    </tr>
+    <tr>
+      <td width="50%">Accidental Death, Permanent Total Disablement</td>
+      <td width="50%">Rs. 300000.00</td>
+    </tr>
+    <tr>
+      <td colspan="2"><b>Section B Optional Covers</b></td>
+    </tr>
+    <tr>
+      <td width="50%">Education Allowance</td>
+      <td width="50%">Covered upto Rs. 30,000 per kid, maximum upto 2 kids</td>
+    </tr>
+  </table>
+
+  <div class="section-heading">Grievance Redressal</div>
+
+  <div class="GrievanceDiv">
+    <div>
+      In case of a grievance, You can contact Us with the details through:
+    </div>
+    <div>
+      Our website: adityabirlacapital.com/healthinsurance
+    </div>
+    <div>
+      Insurance Email: <a href="care.healthinsurance@adityabirlacapital.com">care.healthinsurance@adityabirlacapital.com</a>
+    </div>
+    <div>
+      Toll Free: 1800 270 7000
+    </div>
+    <div>
+      Address: Any of Our Branch office or Corporate office
+    </div>
+    <div>
+      For senior citizens, please contact the respective branch office of the Company or call at 1800 270 7000 or may write an e mail at <a href="seniorcitizen.healthinsurance@adityabirlacapital.com">seniorcitizen.healthinsurance@adityabirlacapital.com</a>
+    </div>
+  </div>
+
+  <div class="GrievanceDiv1">
+    <div>You can also walk in and approach the grievance cell at any of Our branches. If in case You are not satisfied with the response then You can contact Our Head of Customer Service at the following email <a href="carehead.healthinsurance@adityabirlacapital.computer">carehead.healthinsurance@adityabirlacapital.computer</a>     
+    </div>
+    <div>If You are still not satisfied with Our redressal, You may approach the nearest Insurance Ombudsman. The Contact details of the Ombudsman offices are provided on Our Website and in the policy     
+    </div>
+  </div>
+
+  <table class="info-table">
+    <tr>
+      <td colspan="2" style="text-align: center;"><b>Policy Exclusions</b></td>
+    </tr>
+    <tr>
+      <td width="50%">Group Personal Accident</td>
+      <td width="50%">Annexure 1</td>
+    </tr>
+  </table>
+
+  <div class="section-heading">Premium Details</div>
+  <table class="info-table">
+    <tr>
+      <td width="50%">Net Premium</td>
+      <td width="50%">16.95</td>
+    </tr>
+    <tr>
+      <td width="50%">CGST (%)</td>
+      <td width="50%"></td>
+    </tr>
+    <tr>
+      <td width="50%">SGST / UTGST (9%)</td>
+      <td width="50%"></td>
+    </tr>
+    <tr>
+      <td width="50%">IGST (18%) </td>
+      <td width="50%">3.05</td>
+    </tr>
+    <tr>
+      <td width="50%">Total Premium</td>
+      <td width="50%">20.00</td>
+    </tr>
+  </table>
+
+  <table class="info-tableoneline">
+    <tr>
+      <td width="45%">GST Registration No.: 27AANCA4062G1ZN</td>
+      <td width="40%">Category: General Insurance</td>
+      <td width="15%">SAC Code: 997133</td>
+    </tr>
+  </table>
+
+  <div class="section-heading">Claim Process</div>
+
+  <table class="info-table">
+    <tr>
+      <td rowspan="3" width="33%">Please contact us through any of these Modes</td>
+      <td width="33%">Address for Correspondence</td>
+      <td width="34%">Aditya Birla Health Insurance Company Limited, 5th Floor, MBC Infotech Park,Kasarvadavali, Ghodbunder Road, Thane(W), Maharashtra 400615</td>
+    </tr>
+    <tr>
+      <td>Contact Number</td>
+      <td>1800 270 7000</td>
+    </tr>
+    <tr>
+      <td>Email ID</td>
+      <td><a href="care.healthinsurance@adityabirlacapital.com">care.healthinsurance@adityabirlacapital.com</a></td>
+    </tr>
+  </table>
+
+  <div class="fsClass">
+    <b>Stamp Duty-</b> The stamp duty of INR 1/ paid vide MH011485852202021M dated 23/02/2021, received from Stamp Duty Authorities vide Receipt No./GRASS DEFACE NO 0006587929202021 dated 26/03/2021, payment has been made vide Letter of Authorisation No. CSD/310/2021/1260/2021 dated 30/03/2021from Main Stamp Duty Office
+  </div>
+
+  <table class="info-tableoneline" style="margin-top: 20px;">
+    <tr>
+      <td width="50%">Master Policy Number: 62 21 00150 23 27</td>
+      <td width="50%">Certificate Number: GPA AIRPAY 002433</td>
+    </tr>
+  </table>
+
+  <table class="info-tableoneline"  style="margin: 20px 0px;">
+    <tr>
+      <td width="50%">Date: 19 10 2023</td>
+      <td width="50%">Place: Mumbai</td>
+    </tr>
+  </table>
+
+  <div class="fsClass" style="margin-bottom: 15px;">
+    <b>Note:</b> Amount is inclusive of all taxes and cesses as applicable. This certificate must be surrendered to the Insurance Company for issuance of fresh certificate in case of cancellation of Master Policy or any alteration in the insurance affecting the premium.
+  </div>
+
+  <div class="fsClass" style="margin-bottom: 10px;">
+    <b>Important-</b>
+  </div>
+
+  <div class="fsClass" style="margin-bottom: 10px;">
+    <b>1)</b> In case of payment by cheque, in the event of dishonour of cheque for any reason whatsoever, insurance provided under this document automatically stands cancelled from the inception irrespective of whether a separate communication is sent or not
+  </div>
+
+
+  <div style="margin: 25px 0px 10px 0px;">
+    <b>ANNEXURE 1 PERMANENT EXCLUSIONS</b>
+  </div>
+
+  <div class="fsClass" style="border: 1px solid black; padding: 10px;">
+    <div>
+      We shall not be liable to make any payment for any claim under any Benefit under Section II.A. or Section II.B., in respect of any Insured Person, directly or indirectly for, caused by or arising from or in any way attributable to any of the following:
+    </div>
+    <br>
+    <div>
+      1.Any Pre Existing Disease or Injury or disability arising out of a Pre Existing Diseases or any complication arising therefrom.
+    </div>
+
+    <div>2. Any payment in case of more than one claim under the Policy during any one Policy Period by which Our maximum liability in that period would exceed the Sum Insured. This would not apply to payments made under the Additional Covers.</div>
+
+    <div>3. Suicide or attempted suicide, intentional self inflicted Injury, acts of self destruction whether the Insured Person is medically sane or insane.</div>
+
+    <div>4. Mental Illness or sickness or disease including a psychiatric condition, mental disorders of or disturbances of consciousness,strokes, fits or convulsions which affect the entire body and pathological disturbances caused by mental reaction to the same</div>
+
+    <div>5. Certification by a Medical Practitioner who shares the same residence as the Insured Person or who is a member of the Insured Personâ€™s family.</div>
+
+    <div>6. Death or disablement arising out of or attributable to foreign invasion, act of foreign enemies, hostilities, warlike operations (whether war be declared or not or while performing duties in the armed forces of any country during war or at peace time), participation in any naval, military or airforce operation, civil war, public defence, rebellion, revolution, insurrection, military or usurped power.</div>
+
+    <div>7. Death or disablement directly or indirectly caused by or associated with any venereal disease or sexually transmitted disease.</div>
+
+    <div>8. Congenital internal or external diseases, defects or anomalies or in consequence thereof.</div>
+
+    <div>9. Bacterial infections (except pyogenic infection which occurs through a cut or wound due to Accident).</div>
+
+    <div>10. Medical or surgical treatment except as necessary solely and directly as a result of an Accident.</div>
+    <div>11. Death or disablement directly or indirectly caused due to or associated with human T call Lymph tropic virus type III (HTLV III or IITLB III) or Lymphadinopathy Associated Virus ( and its variants or mutants, Acquired Immune Deficiency Syndrome (AIDS) whether or not arising out of HIV, AIDS related complex syndrome ( and any injury caused by and/or related to HIV.</div>
+
+    <div>12. Any change of profession after inception of the Policy which results in the enhancement of Our risk under the Policy, if not accepted and endorsed by Us on the Policy Schedule or Certificate of Insurance.</div>
+
+    <div>13. Death or disablement arising or resulting from the Insured Person committing any breach of law or participating in an actual or attempted felony, riot, crime, misdemeanour or civil commotion with criminal intent.</div>
+
+    <div>14. Death or disablement arising from or caused due to use, abuse or a consequence or influence of an abuse of any substance, intoxicant, drug, alcohol or hallucinogen.</div>
+
+    <div>15. Death or disablement resulting directly or indirectly, contributed or aggravated or prolonged by childbirth or from pregnancy or a consequence thereof including ectopic pregnancy unless specifically arising due to Accident;</div>
+
+    <div>16. Death or disablement caused by participation of the Insured Person in any flying activity, except as a bona fide, fare paying passenger of a recognized airline on regular routes and on a scheduled timetable.</div>
+
+    <div>17. Insured Persons whilst engaging in a speed contest or racing of any kind (other than on foot), bungee jumping, parasailing, ballooning, parachuting, skydiving, paragliding, hang gliding, mountain or rock climbing necessitating the use of guides or ropes, potholing, abseiling, deep sea diving using hard helmet and breathing apparatus, polo, snow and ice sports in so far as they involve the training for or participation in competitions or professional sports and specified in the Policy Schedule.</div>
+
+    <div>18. Insured Persons involved in naval, military or air force operations.</div>
+
+    <div>19. Working in underground mines, tunnelling or explosives, or involving electrical installation with high tension supply, or as jockeys or circus personnel, or engaged in Hazardous Activities.</div>
+
+    <div>20. Accidental death or Injury occurring after twelve calendar months from the date of the Accident.</div>
+    <div>21. Death or disablement unless directly caused by an Accident.</div>
+
+    <div>22. Death or disablement or Injury arising from or caused by ionizing radiation or contamination by radioactivity from any nuclear fuel (explosive or hazardous form) or resulting from or from any other cause or event contributing concurrently or in any other sequence to the loss, claim or expense from any nuclear waste from the combustion of nuclear fuel, nuclear, chemical or biological attack.</div>
+    <br>
+    <div>a) Chemical attack or weapons means the emission, discharge, dispersal, release or escape of any solid, liquid or gaseous chemical compound which, when suitably distributed, is capable of causing any Illness, incapacitating disablement or death.</div>
+    <br>
+    <div>b) Biological attack or weapons means the emission, discharge, dispersal, release or escape of any pathogenic (disease producing) microorganisms and/or biologically produced toxins (including genetically modified organisms and chemically synthesized toxins) which are capable of causing any Illness, incapacitating disablement or death</div>
+    <br>
+    <div>23. Any physical, medical or mental condition or treatment or service that is specifically excluded in the Policy</div>
+
+    <div>25. Any Benefit under the policy arising from Hernia.<br>
+      For detailed policy wordings regarding the above please visit our website<br>
+      <a href="https://www.adityabirlahealth.com/healthinsurance/#!/downloads">https://www.adityabirlahealth.com/healthinsurance/#!/downloads</a>
+    </div>
+
+  </div>
+
+
+  <div class="fsClass" style="margin: 15px 0px;">
+    *This is a computer generated statement doesn’t need any signature
+  </div>
+  <!-- Footer -->
+  <footer class="footer">
+    <table class="info-tableoneline">
+      <tr>
+        <td width="60%" class="footerClass" style="padding: 10px 20px 0px 0px;">
+          <div>Aditya Birla Health Insurance Co. Limited. IRDAI Reg.153. CIN No, U66000MH201SPLC263677.</div> <div>Product Name: Group Activ Secure, Product UIN:[RDAVHLT/ABHUP H(GYV.1/18/2016 17 </div> 
+          <div>Address: 9th Floor, Tower 1, One World Center,Jupiter Mills Compound, 841, Senapati Bapat Marg, Elphinstone Road, Mumbai 400013. Telephone: 1800 270 700, care.healthinsurance@aditvabirlacapital.com Website:adtyabirlahealthinsurance.com. Trademark/Logo Aditya Birla Capital is owned by Aditya Birla Management Corporation Private Limited and being used by Aditya Birla Health Insurance Co. Limited under licensed user agreement(s)</div>
+        </td>
+
+        <td width="40%"><img src="assets/images/absl_footer_image.PNG" alt="Aditya Birla Logo" class="logo"  width="100%" height="70"></td>
+      </tr>
+    </table>
+  </footer>
+
+</div>
+
+<!-- ===== Modal (in-app, no external libs) ===== -->
+<div class="modal-backdrop" *ngIf="showModal" (click)="closeModal()"></div>
+<div class="modal" *ngIf="showModal">
+  <div class="modal-header">
+    <h3>Add / Edit Details</h3>
+    <button class="icon" (click)="closeModal()">✕</button>
+  </div>
+
+  <div class="modal-body">
+    <!-- reuse the ABSL form component in “modal mode” -->
+    <app-modalform
+      [initial]="abslViewFormData"
+      (save)="handleSave($event)"
+      (cancel)="closeModal()"></app-modalform>
+  </div>
+</div>

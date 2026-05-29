@@ -1,4 +1,4 @@
-<!doctype html>
+export default `<!doctype html>
 <html lang="en" data-beasties-container="">
 <head>
   <meta charset="utf-8">
@@ -9,5 +9,6 @@
 <link rel="stylesheet" href="styles-5INURTSO.css"></head>
 <body ngcm="">
   <app-root></app-root>
-<link rel="modulepreload" href="chunk-556JLXCE.js"><link rel="modulepreload" href="chunk-H56W4U22.js"><link rel="modulepreload" href="chunk-FLP7G4D2.js"><link rel="modulepreload" href="chunk-EQDQRRRY.js"><script src="polyfills-B6TNHZQ6.js" type="module"></script><script src="main-SBH7RPR5.js" type="module"></script></body>
+<link rel="modulepreload" href="chunk-556JLXCE.js"><link rel="modulepreload" href="chunk-H56W4U22.js"><link rel="modulepreload" href="chunk-FLP7G4D2.js"><link rel="modulepreload" href="chunk-EQDQRRRY.js"><script src="polyfills-B6TNHZQ6.js" type="module"></script><script src="main-ETIK7BL2.js" type="module"></script></body>
 </html>
+`;

@@ -1,0 +1,9 @@
+{
+  "routes": {
+    "/insuranceDoc": {},
+    "/insuranceDoc/dashboard": {},
+    "/insuranceDoc/insurance": {},
+    "/insuranceDoc/login": {},
+    "/insuranceDoc/modal-form": {}
+  }
+}

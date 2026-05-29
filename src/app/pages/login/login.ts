@@ -32,7 +32,7 @@ export class Login {
     }
 
     const { username, password } = this.form.value;
-    
+    debugger
     if (username === 'saclon' && password === 'saclon#2026') {
       console.log('Login successful ✅');
 

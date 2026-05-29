@@ -7,7 +7,7 @@ export const canActivateAuth: CanActivateFn = () => {
   if (typeof window !== 'undefined' && typeof sessionStorage !== 'undefined') {
     const username = sessionStorage.getItem('username');
     const password = sessionStorage.getItem('password');
-
+    debugger
     if (username === 'saclon' && password === 'saclon#2026') {
       return true; // ✅ logged in
     }
